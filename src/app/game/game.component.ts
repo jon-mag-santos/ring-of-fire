@@ -9,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './game.component.scss'
 })
 export class GameComponent {
-  cardStack = [0, 1, 2, 3, 4];
+  cardStack = [1, 2, 3, 4];
+  pickCardAnimation = false;
+
+  takeCard(isTaken:boolean){
+    this.pickCardAnimation = isTaken;
+  }
 }

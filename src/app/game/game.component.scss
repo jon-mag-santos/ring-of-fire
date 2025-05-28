@@ -22,3 +22,16 @@
         width: 200px;
     }
 }
+
+.top-card {
+    transition: all 125ms ease-in-out;
+    transform: scale(1) rotate(0deg);
+
+    &:hover {
+        transform: rotate(-3deg);
+    }
+
+    &.pick-card {
+        transform: scale(1.5) rotate(0deg); 
+    }
+}
