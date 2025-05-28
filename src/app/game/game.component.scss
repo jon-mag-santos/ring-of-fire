@@ -13,13 +13,12 @@
 
 .card-stack {
     position: relative;
-    width: 200px;
-    height: 300px;
+    width: 120px;
 
     >img {
         cursor: pointer;
         position: absolute;
-        width: 200px;
+        width: 120px;
     }
 }
 
@@ -30,8 +29,20 @@
     &:hover {
         transform: rotate(-3deg);
     }
+}
 
-    &.pick-card {
-        transform: scale(1.5) rotate(0deg); 
-    }
+.pick-card {
+    animation:
+        pick-card-show 0.5s ease-in-out forwards,
+        put-card-aside 1s ease-in-out forwards 0.5s; /* start after the first */
+}
+
+@keyframes pick-card-show {
+    0% {transform: scale(1.0) rotate(-3deg)}
+    100% {transform: scale(1.25) rotate(0deg)}
+}
+
+@keyframes put-card-aside {
+    0% { transform: scale(1.25) rotate(0deg) translateX(0px) translateY(0px)}
+    100% { transform: scale(1.0) rotate(6deg) translateX(40px) translateY(-200px)}
 }
