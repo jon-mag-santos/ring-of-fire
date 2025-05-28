@@ -12,10 +12,8 @@ import { Game } from '../../models/game';
 export class GameComponent implements OnInit {
   cardStack = [1, 2, 3, 4];
   pickCardAnimation = false;
-  playedCardAnimation = false;
   game: Game = new Game;
   currentCard :string | undefined;
-  playedCard :string | undefined;
 
   ngOnInit(): void {
     this.newGame();
@@ -27,19 +25,15 @@ export class GameComponent implements OnInit {
   }
 
   takeCard(isTaken:boolean){
-    if(!this.playedCardAnimation)
-      this.playedCardAnimation = true;
-
     if(!this.pickCardAnimation) {
       this.pickCardAnimation = isTaken;
       this.currentCard = this.game.stack.pop();
 
       setTimeout(() => {
-          this.playedCard = this.currentCard;
-          this.game.playedCard.push(this.playedCard); 
+          this.game.playedCards.push(this.currentCard);
           setTimeout(() => {
             this.pickCardAnimation = false;
-        }, 150);
+          }, 50); 
       }, 1500);
     }
   }
