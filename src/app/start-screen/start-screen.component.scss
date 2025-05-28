@@ -11,3 +11,20 @@
         max-width: 100%;
     }
 }
+
+.start-label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    >img {
+        margin-top: 35%;
+        cursor: pointer;
+        width: 40vw;
+        height: auto;
+        &:hover {
+            filter: brightness(1.10);
+        }
+    }
+}
