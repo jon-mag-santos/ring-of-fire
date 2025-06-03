@@ -1,6 +1,4 @@
-<mat-card class="info-card" appearance="outlined">
-    <mat-card-title> Title </mat-card-title>
-    <mat-card-content>
-        Instruction : Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quae sint iure unde. Quaerat cumque voluptates, adipisci earum, facilis accusantium temporibus iusto illum nisi illo vero explicabo nesciunt omnis corporis?
-    </mat-card-content>
+<mat-card [class.d-none]="(card == undefined)" class="info-card" appearance="outlined">
+    <mat-card-title>{{title}}</mat-card-title>
+    <mat-card-content>{{description}}</mat-card-content>
   </mat-card>
