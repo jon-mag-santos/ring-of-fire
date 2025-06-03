@@ -52,7 +52,7 @@ export class GameComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(name => {
-      if (name.trim()) {
+      if (name && name.trim()) {
         this.game.players.push(name);
       }
     });

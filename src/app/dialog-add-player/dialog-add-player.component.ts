@@ -29,4 +29,10 @@ export class DialogAddPlayerComponent {
   onNoClick(): void {
     this.dialogRef.close();  // Closes the dialog
   }
+
+  onEnter(): void {
+    if (this.name && this.name.trim().length > 0) {
+      this.dialogRef.close(this.name.trim());
+    }
+  }
 }

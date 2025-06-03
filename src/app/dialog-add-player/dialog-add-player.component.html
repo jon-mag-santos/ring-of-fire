@@ -3,11 +3,11 @@
   <p>The name of the player: </p>
   <mat-form-field>
     <mat-label>Player Name</mat-label>
-    <input matInput [(ngModel)]="name" />
+    <input matInput [(ngModel)]="name" (keyup.enter)="onEnter()" cdkFocusInitial />
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-button class="no-button" (click)="onNoClick()">No Thanks</button>
-    <button mat-button class="ok-button" color="primary" [mat-dialog-close]="name" cdkFocusInitial>Ok</button>
+    <button mat-button class="ok-button" color="primary" [disabled]="name.length == 0" [mat-dialog-close]="name">Ok</button>
 </mat-dialog-actions>
 
