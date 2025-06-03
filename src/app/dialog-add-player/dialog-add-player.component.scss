@@ -1,0 +1,33 @@
+/* Lighten/darken functions with sass built-in or define manually */
+@use 'sass:color';
+
+$primary-color: #ab3737;
+$primary-bg-color: #f5e6e6;
+$primary-light: color.scale($primary-color, $lightness: 40%);
+$primary-dark: color.scale($primary-color, $lightness: -15%);
+
+/* Style text field */
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: $primary-bg-color !important;
+    border-radius: 4px;
+  }
+
+/* Style Ok button */
+.ok-button {
+    background-color: $primary-bg-color;
+    color: $primary-color;
+    font-weight: 600;
+  
+    &:hover {
+      background-color: $primary-light;
+      color: $primary-dark;
+    }
+  }
+
+.no-button {
+    color: $primary-dark;
+  
+    &:hover {
+      background-color: $primary-bg-color;
+    }
+  }

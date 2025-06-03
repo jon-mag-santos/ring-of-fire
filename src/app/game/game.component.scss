@@ -51,10 +51,13 @@
     transform: scale(1.0) rotate(6deg) translateX(40px) translateY(-200px)
 }
 
-.no-click {
-    pointer-events: none;
+.avatar-position {
+    position: absolute;
+    right: 0;
+}
 
-    &:hover { 
-        cursor: not-allowed; 
-    }
- }
+.btn-add {
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+}
