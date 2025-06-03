@@ -3,8 +3,8 @@
     align-items: center;
     background-color:rgba(165, 42, 42, 0.507);
     width: 300px;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 
     >span {
         font-size: 32px;
@@ -27,5 +27,15 @@
     
     >span {
         color: black;
+    }
+}
+
+@media (max-width: 860px) {
+    .player-active {
+        display: flex;
+    }
+
+    .player-unactive {
+        display: none;
     }
 }

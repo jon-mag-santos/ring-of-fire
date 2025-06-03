@@ -9,3 +9,10 @@
 .d-none {
     display: none;
 }
+
+@media (max-height: 700px) {
+    .info-card {
+        font-size: smaller;
+        bottom: 70px;
+    }
+}

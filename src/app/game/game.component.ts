@@ -33,10 +33,11 @@ export class GameComponent implements OnInit {
   }
 
   takeCard(isTaken:boolean){
-    if(!this.pickCardAnimation) {
+    if(!this.pickCardAnimation && this.game.players.length !== 0) {
       this.pickCardAnimation = isTaken;
       this.currentCard = this.game.stack.pop();
-
+      this.game.currentPlayer++;
+      this.game.currentPlayer %= this.game.players.length;
       setTimeout(() => {
           this.game.playedCards.push(this.currentCard);
           setTimeout(() => {
@@ -51,7 +52,9 @@ export class GameComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(name => {
-      this.game.players.push(name);
+      if (name.trim()) {
+        this.game.players.push(name);
+      }
     });
   }
 }
