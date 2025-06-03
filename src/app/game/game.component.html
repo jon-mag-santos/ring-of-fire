@@ -3,7 +3,7 @@
             [ngStyle]="{ 'top.px' : 70 + (i * 85) }" 
             *ngFor="let player of game.players; let i = index" 
             class="avatar-position"></app-player>
-<div class="game-field">
+<div class="game-field" style="background-image: url('assets/img/board.jpg')">
     <div class="card-stack">
         <!-- Card stack-->
         <img [ngStyle]="{ 'right.px' : i * 5 }" *ngFor="let c of cardStack; let i = index" src="assets/img/cards/card_cover.png" alt="">
